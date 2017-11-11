@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    defaultConfig {
+        applicationId "com.example.oluwapelumiolaoye.glidemvpretrofit"
+        minSdkVersion 15
+        targetSdkVersion 25
+        multiDexEnabled = true
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:25.+'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+
+    //For dagger
+    compile 'com.google.dagger:dagger:2.13'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
+    testCompile 'junit:junit:4.12'
+
+    //Multidex
+    compile 'com.android.support:multidex:1.0.2'
+
+    //LeakCanary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    // Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+
+    // JSON Parsing
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    //Glide
+    compile 'com.github.bumptech.glide:glide:3.8.0'
+
+    //Glide Transformation
+    compile 'jp.wasabeef:glide-transformations:2.0.2'
+    //Circle Image View
+    compile 'com.jackandphantom.android:circularimageview:1.2.0'
+
+    // If you want to use the GPU Filters
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+}

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GlideMVPRetrofit</string>
+    <string name="description">Make a click to get a random image from the dog store.</string>
+    <string name="random_image">Reload</string>
+</resources>
